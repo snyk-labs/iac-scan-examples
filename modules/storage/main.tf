@@ -13,3 +13,12 @@ resource "aws_s3_bucket" "secure-bucket" {
 resource "aws_s3_bucket" "insecure-bucket" {
   bucket = "insecure-bucket"
 }
+
+resource "aws_ebs_volume" "example" {
+  availability_zone = "us-east-1a"
+  size              = 20
+
+  tags = {
+    Name = "insecure"
+  }
+}
