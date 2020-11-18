@@ -19,11 +19,6 @@ resource "aws_iam_account_password_policy" "strict" {
   max_password_age = 3
 }
 
-resource "aws_kms_key" "a" {
-  description             = "key 1"
-  deletion_window_in_days = 10
-}
-
 module "vpc" {
   source = "./modules/vpc"
 }
@@ -34,4 +29,8 @@ module "storage" {
 
 module "cloudtrail" {
   source = "./modules/cloudtrail"
+}
+
+module "pki" {
+  source = "./modules/pki"
 }
