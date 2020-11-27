@@ -30,3 +30,7 @@ module "storage" {
 module "cloudtrail" {
   source = "./modules/cloudtrail"
 }
+
+module "pki" {
+  source = "./modules/pki"
+}
