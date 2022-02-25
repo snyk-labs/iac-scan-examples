@@ -35,6 +35,6 @@ resource "aws_security_group" "allow_ssh_with_valid_cidr" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = list(var.cidr)
+    cidr_blocks = tolist([var.cidr])
   }
 }
